@@ -1,9 +1,7 @@
 # model_factory.py
 
 import tensorflow as tf
-
-INPUT_SHAPE = (128, 130, 1)
-NUM_CLASSES = 4
+from config import INPUT_SHAPE, NUM_CLASSES  # Importing from config.py
 
 def get_inception_model():
     base_model = tf.keras.applications.InceptionV3(
@@ -63,7 +61,7 @@ def get_custom_cnn_model():
                   metrics=['accuracy'])
     return model
 
-# Optional: wrapper
+# Optional: wrapper to choose the model
 def get_model(model_name: str):
     if model_name.lower() == 'inception':
         return get_inception_model()

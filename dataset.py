@@ -6,13 +6,7 @@ import numpy as np
 from tqdm import tqdm
 from preprocess import audio_to_log_mel_spec
 from sklearn.model_selection import train_test_split
-
-# Update this to your actual dataset path
-DATASET_PATH = "data/Chicken_Dataset"
-
-# Class folders and label mapping
-CLASS_NAMES = ["alarm", "egg", "feeding", "heat"]
-CLASS_TO_LABEL = {name: idx for idx, name in enumerate(CLASS_NAMES)}
+from config import DATASET_PATH, CLASS_NAMES, CLASS_TO_LABEL  # Imported from config.py
 
 def load_dataset():
     data = []
