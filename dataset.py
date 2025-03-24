@@ -31,7 +31,8 @@ def load_dataset():
 def prepare_data(test_size=0.2):
     dataset = load_dataset()
     X = np.array([item[0] for item in dataset])
-    y = np.array([item[1] for item in dataset])
+    y = np.array([item[1] for item in dataset], dtype=int)
+
 
     # Add channel dimension for CNN
     X = X[..., np.newaxis]

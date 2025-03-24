@@ -1,7 +1,7 @@
 # config.py
 
 # Dataset
-DATASET_PATH = "G:/My Drive/chicken-sounds"
+DATASET_PATH = "data"
 CLASS_NAMES = ["alarm", "egg", "feeding", "heat"]
 CLASS_TO_LABEL = {name: idx for idx, name in enumerate(CLASS_NAMES)}
 
