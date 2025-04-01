@@ -33,17 +33,17 @@ class RealTimeLiveGUI:
         self.root.title("Live Chicken Voice Classifier")
 
         # Labels for prediction and confidence
-        self.prediction_label = tk.Label(root, text="Prediction: N/A", font=("Helvetica", 16))
+        self.prediction_label = tk.Label(root, text="Prediction: N/A", font=("Helvetica", 24))
         self.prediction_label.pack(pady=5)
 
-        self.confidence_label = tk.Label(root, text="Confidence: N/A", font=("Helvetica", 14))
+        self.confidence_label = tk.Label(root, text="Confidence: N/A", font=("Helvetica", 22))
         self.confidence_label.pack(pady=5)
 
-        self.alert_label = tk.Label(root, text="", font=("Helvetica", 14), fg="red")
+        self.alert_label = tk.Label(root, text="", font=("Helvetica", 20), fg="red")
         self.alert_label.pack(pady=5)
 
         # Matplotlib figure for live waveform
-        self.fig, self.ax = plt.subplots(figsize=(5, 3))
+        self.fig, self.ax = plt.subplots(figsize=(6, 4))
         self.canvas = FigureCanvasTkAgg(self.fig, master=root)
         self.canvas.get_tk_widget().pack(pady=10)
 
@@ -73,6 +73,7 @@ class RealTimeLiveGUI:
         self.ax.set_title("Live Audio Waveform")
         self.ax.set_xlabel("Time (s)")
         self.ax.set_ylabel("Amplitude")
+        self.fig.tight_layout()
         self.canvas.draw()
         # Update the waveform display every 50ms
         self.root.after(50, self.update_waveform)

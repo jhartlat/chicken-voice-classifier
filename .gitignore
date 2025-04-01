@@ -2,3 +2,5 @@
 /__pycache__
 /sounds
 combine_wav.py
+make_mini_clips.py
+upload_predict_gui.py
