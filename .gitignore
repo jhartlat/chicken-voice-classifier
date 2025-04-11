@@ -4,3 +4,6 @@
 combine_wav.py
 make_mini_clips.py
 upload_predict_gui.py
+/venv
+/upload_predictor
+/live_predictor
